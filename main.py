@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 # Set up the Google API Key (for the email/text scam feature)
 # WARNING: Do not hardcode API keys in production. Use environment variables.
-os.environ["GOOGLE_API_KEY"] = "AIzaSyBMkIAD4s3EItbjMIbwPzVfDl9yNi1i_vA" # Make sure this is set in your environment
+os.environ["GOOGLE_API_KEY"] = "XXXXXX" # Make sure this is set in your environment
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
 # Initialize the Gemini model (for the email/text scam feature)
@@ -210,4 +210,5 @@ def predict_url():
 if __name__ == '__main__':
     # Train the model *before* starting the app
     train_url_model()
+
     app.run(debug=True)
